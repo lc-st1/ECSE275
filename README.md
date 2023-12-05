@@ -22,7 +22,8 @@ Use robot arms to move a box down conveyor belts to a goal point.
 ...
 
 ### Alternatives Considered
-...
+#### Suction
+![](suction.mp4)
 
 ## Path Planning Method (Follow Various Endpoints)
 ...
