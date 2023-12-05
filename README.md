@@ -23,7 +23,9 @@ Use robot arms to move a box down conveyor belts to a goal point.
 
 ### Alternatives Considered
 #### Suction
-
+<video width="320" height="240" controls>
+  <source src="suction.mov" type="video/mp4">
+</video>
 
 https://github.com/lc-st1/ECSE275/assets/75393058/4b42e3b2-67f5-425b-818a-d7759173aaff
 
