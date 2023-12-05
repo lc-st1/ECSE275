@@ -24,7 +24,7 @@ Use robot arms to move a box down conveyor belts to a goal point.
 ### Alternatives Considered
 #### Suction
 <video width="320" height="240" controls>
-  <source src="suction.mp4" type="video/mp4">
+  <source src="suction.mp4.mov" type="video/mov">
 </video>
 
 ## Path Planning Method (Follow Various Endpoints)
