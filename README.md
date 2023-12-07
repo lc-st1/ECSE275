@@ -1,10 +1,10 @@
 # ECSE275 Final Project - Manufacturing Line
 
 ## Team Members and Roles
-* Endar Li - Team Lead, Robot Scene Creation, General README Writer, Proximity Sensors
+* Endar Li - Team Lead, Robot Scene Creation, General README Writer, Proximity Sensors, Debugger
 * Jia Yang Lin - Gripper, End Point Path Planning
 * Josh Cook - Inverse Kinematics, End Point Path Planning
-* Luca Ciampaglia - Conveyor Belts, Proximity Sensors, README Writer
+* Luca Ciampaglia - Conveyor Belts, Proximity Sensors, README Writer, Debugger
 
 ## Introduction
 This project uses robot arms to move a box down conveyor belts to a goal point to emulate a manufacturing line process. Inverse Kinematics is explored to actualize movement in the arm and proximity sensors are used both in the gripper to grab boxes and as unique objects to detect boxes at the end of conveyors. Additionally, the gripper actuates using dynamics.
@@ -38,10 +38,15 @@ Initially, other methods of interaction were considered. The first was using a s
 
 
 ### Path Planning Method (Follow Various Endpoints)
-...
+We looked into samples from CoppeliaSim with the same gripper to understand how to implement the path planning method, but due to the samples using IK environments and threading, we were unable to replicate their method. Instead, to actuate the grippers, we performed the following to grab and release the box(es):
+1. Move towards the box.
+2. Use sim.checkCollision() to check that the grippers collide with the box.
+3. Modify the box parents to grab the box.
+4. Move towards an endpoint.
+5. Check that the distance between the box and the goal point is less than a threshold to release the box.
 
 ## Results
-it dont work
+it dont work yet
 
 ## Conclusion
 ...
