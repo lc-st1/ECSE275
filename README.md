@@ -68,13 +68,28 @@ Before we could figure out a more sensible method of grabbing the box with our i
 ## Results
 A run of the manufacturing line as a GIF:  
 ![OGRunGIF](https://github.com/lc-st1/ECSE275/assets/53535721/1b078f7c-e99e-45b3-b1ec-bff14c13a1d4)  
-The full length YouTube video:  
+The full-length YouTube video:  
 [![](https://markdown-videos-api.jorgenkh.no/youtube/3nSXLGADSrU)](https://youtu.be/3nSXLGADSrU)
 
-[quantitative data analysis on speed]
+The fastest yet reliable speed that we could get from the manufacturing line was 0.04 on both conveyors. The resulting runtime had an average of 2:00 minutes and a 100% success rate for the 4 iterations of the speed combinations that we ran. The third conveyor was set to a speed of 0.3 but modifying did not do much to change the runtimes.
+
+A notable run from our tests was from a speed combo of 0.06 on the first conveyor and 0.05 on the second. It was the fastest runtime of our tests at 1:47 minutes. We do not recommend this combo because it is highly unreliable. Our success rate from this combo was 20% of the 5 iterations that we ran of it but we suspect the true success rate is closer to 1% as the single success was due to a stroke of luck. For the other 4 iterations of this combo, the third and second boxes would get stacked on top of each other and the second arm would usually stop moving once it reached the third box due to dropping it when it moved the second to the endpoint. It would try to configure to the orientation of the dropped box but this maneuver would break it. Our one successful run of this speed combo likely happened because the third box dropped and landed on a convenient orientation that the robot arm could grab.
+
+Displayed is a short version of our data analysis table. The full Google sheet is linked under the condensed table.
+
+| Iter | Conv1 (v) | Conv1 (v) | Works? | Runtime |
+|------|-----------|-----------|--------|---------|
+| 0    | 0.03      | 0.03      | yes    | 2:06:47 |
+| 1    | 0.05      | 0.05      | no     |         |
+| 2    | 0.05      | 0.06      | no     |         |
+| 3    | 0.07      | 0.05      | no     |         |
+| 4    | 0.06      | 0.05      | no     |         |
+| 5    | 0.06      | 0.05      | yes    | 1:47:05 |
+
+Link to our sheet: https://docs.google.com/spreadsheets/d/1fs-ZvYQxiL3QqOqIIaE0Rxxe_IdVqTtStlsILmmjwpo/edit#gid=731419285
   
 ## Conclusion
-The manufacturing line transports a box down two different conveyor belts to an endpoint using two IRB140 arms that move using inverse kinematics and by following different endpoints. This project can be further developed by implementing a more scalable and versatile path-planning method. Such a method can be used to make it easier for the project to be used for other applications and increase in complexity. One example of increasing the complexity is adding more conveyor belts, more robot arms, and/or more boxes. An example of using this for another application could be using the robot arms to put objects in empty boxes before moving the boxes.
+The manufacturing line transports a box down two different conveyor belts to an endpoint (where it drops onto a third conveyor and gets chucked off the map) using two IRB140 arms that move using inverse kinematics and by following different endpoints. This project can be further developed by implementing a more scalable and versatile path-planning method. Such a method can be used to make it easier for the project to be used for other applications and increase in complexity. Some examples of increasing the complexity—besides optimizing for speed—are adding more conveyor belts, robot arms, and/or boxes. An example of using this for another application could be using the robot arms to put objects in empty boxes before moving the boxes.
 
 ## Instructions to Use
 1. Clone the repository: <br>
