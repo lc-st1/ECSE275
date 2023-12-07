@@ -1,10 +1,11 @@
 # ECSE275 Final Project - Manufacturing Line
 
 ## Team Members and Roles
-Endar Li - Team Lead, Robot Scene Creation, General README Writer, Proximity Sensors
-Jia Yang Lin - Gripper, End Point Path Planning
-Josh Cook - Inverse Kinematics, End Point Path Planning
-Luca Ciampaglia - Proximity Sensors, README Writer
+* Endar Li - Team Lead, Robot Scene Creation, General README Writer, Proximity Sensors
+* Jia Yang Lin - Gripper, End Point Path Planning
+* Josh Cook - Inverse Kinematics, End Point Path Planning
+* Luca Ciampaglia - Proximity Sensors, README Writer
+* 
 ## Description
 Use robot arms to move a box down conveyor belts to a goal point.
 
