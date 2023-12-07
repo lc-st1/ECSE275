@@ -6,8 +6,8 @@
 * Josh Cook - Inverse Kinematics, End Point Path Planning
 * Luca Ciampaglia - Conveyor Belts, Proximity Sensors, README Writer
 
-## Description
-Use robot arms to move a box down conveyor belts to a goal point.
+## Introduction
+This project uses robot arms to move a box down conveyor belts to a goal point to emulate a manufacturing line process. Inverse Kinematics is explored to actualize movement in the arm and proximity sensors are used both in the gripper to grab boxes and as unique objects to detect boxes at the end of conveyors. Additionally, the gripper actuates using dynamics.
 
 ## Instructions to Use
 1. Clone the repository: <br>
