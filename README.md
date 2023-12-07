@@ -18,7 +18,13 @@ A general setup of the project consists of two perpendicular conveyor belts, two
 ### Robot Movement Method (Inverse Kinematics)
 To move the joints of the robot arms, we implemented inverse kinematics. We calculated the first 3 joints using the same method used in Assignment 4 of the homework. From the homework, we used the elbow-down implementation for our arms as that is the most reasonable approach for picking up and moving boxes with a stationary arm. For the remaining 3 joints of the arm (that spins the wrist along the axis of the furthest joint from the base, rotates the wrist up and down, and spins the gripper connected to the arm), we referenced Mohammed Almaged's paper on "Forward and Inverse Kinematic Analysis and Validation of the ABB IRB 140 Industrial Robot" to implement inverse kinematics. The most helpful formulas from his paper were the ZYZ Euler's angles formulas as they were decently accurate when implemented into the robot. The angles were experimentally offset and modified to increase accuracy.
 
-Below, are the angles:  
+![image](https://github.com/lc-st1/ECSE275/assets/152321645/6b45539e-ea72-47e5-b334-ee4c46e41d9f)
+
+Below, are the angles: 
+
+![image](https://github.com/lc-st1/ECSE275/assets/152321645/5144983d-1908-45a5-a10f-7f6bc73ecf3f)
+![image](https://github.com/lc-st1/ECSE275/assets/152321645/53d75e4b-572d-4ae1-a7b9-b033e9bcfb38)
+
 $θ_5 = atan^2( \sqrt{g_{31}^2 + g_{32}^2}, g_{33} ) $  
 $θ_4 = atan^2( g_{32} / s_β, -g_{31} / s_β ) $  
 $θ_6 = atan^2( g_{23} / s_β, g_{13} / s_β ) $  
