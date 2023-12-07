@@ -16,7 +16,12 @@ A general setup of the project consists of two perpendicular conveyor belts, two
 <img width="330" alt="image" src="https://github.com/lc-st1/ECSE275/assets/53535721/350cc390-2faf-433f-a3bd-a08c3afcda8d">
 
 ### Robot Movement Method (Inverse Kinematics)
-To move the joints of the robot arms, we implemented inverse kinematics. (PLEASE CHECK IF CORRECT, JOSH) We calculated the first 3 joints using the same method used in Assignment 4 of the homework. We used the elbow-down implementation for our arms as that is the most 
+To move the joints of the robot arms, we implemented inverse kinematics. (PLEASE CHECK IF CORRECT, JOSH) We calculated the first 3 joints using the same method used in Assignment 4 of the homework. From the homework, we used the elbow-down implementation for our arms as that is the most reasonable approach for picking up and moving boxes with a stationary arm. For the remaining 3 joints of the arm (that spins the wrist along the axis of the furthest joint from the base, rotates the wrist up and down, and spins the gripper connected to the arm), we referenced Mohammed Almaged's paper on "Forward and Inverse Kinematic Analysis and Validation of the ABB IRB 140 Industrial Robot" to implement inverse kinematics. The most helpful formulas from his paper were the ZYZ Euler's angles formulas as they were quite accurate when implemented into the robot.
+
+Below, are the angles:
+$θ_5 = atan^2( \sqrt{g_{31}^2 + g_{32}^2}, g_{33} ) $
+$θ_4 = atan^2( g_{32} / s_β, -g_{31} / s_β ) $
+$θ_6 = atan^2( g_{23} / s_β, g_{13} / s_β ) $
 
 ### Detection Method (Proximity Sensor)
 To control the movement of the conveyor belts, we chose to use ray type proximity sensors. These were set up to detect when a cube passed by on the conveyor belt. Upon triggering, these would set the target speed of the conveyor belt to 0 and initiate the robot arm movement. These had to be placed slightly before the end of each conveyor belt to allow for the declaration time. We also used a proximity sensor to trigger the movement of the second conveyor belt, setting the target speed to 0.5 once a cube is detected in front of it. These were chosen for their ease of use, as the sensing function in the main script could call each of the proximity sensors and control the system based on their output.
