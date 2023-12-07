@@ -5,7 +5,7 @@
 * Jia Yang Lin - Gripper, End Point Path Planning
 * Josh Cook - Inverse Kinematics, End Point Path Planning
 * Luca Ciampaglia - Proximity Sensors, README Writer
-* 
+
 ## Description
 Use robot arms to move a box down conveyor belts to a goal point.
 
