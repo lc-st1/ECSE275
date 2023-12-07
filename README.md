@@ -32,6 +32,7 @@ An RG2 gripper was used to interact with and pick up the cubes. This gripper des
 ### Alternatives Considered
 #### Suction
 Initially, other methods of interaction were considered. The first was using a suction-based manipulator to pick up the cubes. However, we were unable to control the gripper fully and chose not to use it.
+
 https://github.com/lc-st1/ECSE275/assets/75393058/4b42e3b2-67f5-425b-818a-d7759173aaff
 
 
