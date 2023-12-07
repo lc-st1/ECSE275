@@ -11,9 +11,9 @@ This project uses robot arms to move a box down conveyor belts to a goal point t
   
 ## Approach
 ### Robot Scene
-A general setup of the project consists of two perpendicular conveyor belts, two stationary IRB140 robot arms and the end of each conveyor (grippers not included in the below image), a few cuboids, proximity sensors that detect the boxes and stop the conveyor, end effectors to assist robot arm movement, and a final goal point for where the cuboids end their journey.
+A general setup of the project consists of two perpendicular conveyor belts, two stationary IRB140 robot arms with RG2 grippers at the end of each conveyor, a few cuboids, proximity sensors that detect the boxes and stop the conveyors, end effectors to assist robot arm movement, and a final goal point for where the cuboids end their journey. There is an additional third conveyor that assists the boxes toward freedom.
 
-<img width="330" alt="image" src="https://github.com/lc-st1/ECSE275/assets/53535721/350cc390-2faf-433f-a3bd-a08c3afcda8d">
+<img width="599" alt="image" src="https://github.com/lc-st1/ECSE275/assets/53535721/fc75aee6-7f77-40b1-af8c-9287569f3869">
   
 ### Robot Movement Method (Inverse Kinematics)
 To move the joints of the robot arms, we implemented inverse kinematics. We calculated the first 3 joints using the same method used in Assignment 4 of the homework. From the homework, we used the elbow-down implementation for our arms as that is the most reasonable approach for picking up and moving boxes with a stationary arm. For the remaining 3 joints of the arm (that spins the wrist along the axis of the furthest joint from the base, rotates the wrist up and down, and spins the gripper connected to the arm), we referenced Mohammed Almaged's paper on "Forward and Inverse Kinematic Analysis and Validation of the ABB IRB 140 Industrial Robot" to implement inverse kinematics. The most helpful formulas from his paper were the ZYZ Euler's angles formulas as they were decently accurate when implemented into the robot. The angles were experimentally offset and modified to increase accuracy.
