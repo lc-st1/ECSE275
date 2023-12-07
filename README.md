@@ -47,6 +47,18 @@ We looked into samples from CoppeliaSim with the same gripper to understand how 
 ##### Grabbing Boxes Using A Parent
 Before we could figure out a more sensible method of grabbing the box with our inverse kinematics method, we set the parent of the box to the arm to grab it and the parent to the conveyor to release it.
   
+### Difficulties Encountered
+* Offsets for IK
+  * Looked at Almaged's paper for reference and played around with the values in the angle formulas using educated guesses based on knowledge from class.
+* Knowing when the gripper touched/grabbed the box
+  * Was very difficult and couldn't get the proximity sensor on the gripper to give us what we were looking for. Initially figured out how to make it work using the parent method, but ultimately found a more sane method which is step 2 of the path planning process.
+* Knowing when to let go
+  * Were not sure when to let go of boxes in the code.
+  * Realized we could do this when the gripper reaches the next targeted endpoint (used the distance from the endpoint to the gripper as a flag).
+* When to make arms go back to their original position
+  * Once the arms drop a box, an index in the loop increases and the new target is set to the original pick-up position. Once it reaches that, the next cuboid is set to the new target.
+
+  
 ## Results
 
 [Insert image/gifs of working conveyor belt]
