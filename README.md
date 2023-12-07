@@ -1,7 +1,7 @@
 # ECSE275 Final Project - Manufacturing Line
 
 ## Team Members and Roles
-* Endar Li - Team Lead, Robot Scene Creation, General README Writer, Proximity Sensors, Debugger, Data Analysis
+* Endar Li - Team Lead, Robot Scene Creation, Main README Writer, Proximity Sensors, Debugger, Data Analysis
 * Jia Yang Lin - Gripper, End Point Path Planning
 * Josh Cook - Inverse Kinematics, End Point Path Planning
 * Luca Ciampaglia - Conveyor Belts, Proximity Sensors, README Writer, Debugger, End Point Path Planning
@@ -36,7 +36,7 @@ An RG2 gripper was used to interact with and pick up the cubes. This gripper des
 ##### Suction
 https://github.com/lc-st1/ECSE275/assets/53535721/be6465fa-5585-4768-a906-7beb970e92b3
 
-Initially, other methods of interaction were considered. The first was using a suction-based manipulator to pick up the cubes. However, we were unable to control the gripper fully and chose not to use it. In addition to this, we decided that the mechanical gripper was a more interesting challenge to implement.
+Initially, other methods of interaction were considered. The most relevant was using a suction-based manipulator to pick up the cubes. However, we were unable to control the gripper fully and chose not to use it. In addition to this, we decided that the mechanical gripper was a more interesting challenge to implement.
   
 ### Path Planning Method (Follow Various Endpoints)
 We looked into samples from CoppeliaSim with the same gripper to understand how to implement the path planning method, but due to the samples using IK environments and threading, we were unable to replicate their method. Instead, to actuate the grippers, we performed the following to grab and release the box(es):
@@ -46,7 +46,7 @@ We looked into samples from CoppeliaSim with the same gripper to understand how 
 5. Check that the distance between the box and the goal point is less than a designated threshold to release the box.
 6. Repeat the above for the other arm and boxes.
 
-As to not break the RobotScene file, we tested this implementation separately, first. A GIF of the test is shown below.  
+As to not break the RobotScene file, we tested this implementation in a separate file, first. A GIF of the test is shown below.  
 ![Gripper](https://github.com/lc-st1/ECSE275/assets/53535721/7ff98c32-a196-45bb-9d9f-ec99f35539a6)
 
 #### Alternatives Considered
@@ -89,7 +89,9 @@ Displayed is a short version of our data analysis table. The full Google sheet i
 Link to our sheet: https://docs.google.com/spreadsheets/d/1fs-ZvYQxiL3QqOqIIaE0Rxxe_IdVqTtStlsILmmjwpo/edit#gid=731419285
   
 ## Conclusion
-The manufacturing line transports a box down two different conveyor belts to an endpoint (where it drops onto a third conveyor and gets chucked off the map) using two IRB140 arms that move using inverse kinematics and by following different endpoints. This project can be further developed by implementing a more scalable and versatile path-planning method. Such a method can be used to make it easier for the project to be used for other applications and increase in complexity. Some examples of increasing the complexity—besides optimizing for speed—are adding more conveyor belts, robot arms, and/or boxes. An example of using this for another application could be using the robot arms to put objects in empty boxes before moving the boxes.
+The manufacturing line transports boxes down two different conveyor belts to an endpoint (where they drop onto a third conveyor and get chucked off the map) using two IRB140 arms that move using inverse kinematics and by following different endpoints. The optimal operational speed of the conveyor belts is 0.04 as they are the fastest yet still reliable speed combination that the routine will completely run on. The average runtime of this combo is 2:00 minutes and it has a success rate of 100%.
+
+This project can be further developed by implementing a more scalable and versatile path-planning method. Such a method can be used to make it easier for the project to be used for other applications and increase in complexity. Some examples of increasing the complexity—besides optimizing for speed—are adding more conveyor belts, robot arms, and/or boxes. An example of using this for another application could be using the robot arms to put objects in empty boxes before moving the boxes.
 
 ## Instructions to Use
 1. Clone the repository: <br>
