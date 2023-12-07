@@ -28,8 +28,8 @@ An RG2 gripper was used to interact with and pick up the cubes. This gripper des
 ##### Suction
 https://github.com/lc-st1/ECSE275/assets/75393058/4b42e3b2-67f5-425b-818a-d7759173aaff
 
-Initially, other methods of interaction were considered. The first was using a suction-based manipulator to pick up the cubes. However, we were unable to control the gripper fully and chose not to use it.
-
+Initially, other methods of interaction were considered. The first was using a suction-based manipulator to pick up the cubes. However, we were unable to control the gripper fully and chose not to use it. In addition to this, we decided that the mechanical gripper was more interesting challenge to use.
+ 
 
 
 ### Path Planning Method (Follow Various Endpoints)
