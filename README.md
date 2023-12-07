@@ -25,6 +25,9 @@ $θ_6 = atan^2( g_{23} / s_β, g_{13} / s_β ) $
   
 ### Detection Method (Proximity Sensor)
 To control the movement of the conveyor belts, we chose to use ray-type proximity sensors. These were set up to detect when a cube passes by on the conveyor belt. Upon triggering, these set the target speed of the conveyor belt to 0 and initiate the robot arm movement. These had to be placed slightly before the end of each conveyor belt to allow for the declaration time lag. We also used a proximity sensor to trigger the movement of the second conveyor belt to perform the same aforementioned function. These sensors were chosen for their ease of use, as the sensing function in the main script could call each of the proximity sensors and control the system based on their output. Additionally, the cuboids only need to be detected to cross a threshold position so other sensors would be unnecessarily complex for our application.
+
+A GIF of the proximity sensors is shown below:  
+![prox](https://github.com/lc-st1/ECSE275/assets/53535721/be575905-8063-42d6-9385-b31d03ebb58f)
   
 ### Cube Retrieval Method (Gripper)
 An RG2 gripper was used to interact with and pick up the cubes. This gripper design was chosen as it interfaced with the robot arm easily and came with standard fingers for gripping. These are controlled via a force input, velocity input, and a boolean control input. For this project, the force and velocity inputs were left as the default values. We then control the gripper via the boolean input, toggling the gripper to be either open or closed.
@@ -43,6 +46,9 @@ We looked into samples from CoppeliaSim with the same gripper to understand how 
 5. Check that the distance between the box and the goal point is less than a designated threshold to release the box.
 6. Repeat the above for the other arm and boxes.
 
+As to not break the RobotScene file, we tested this implementation separately, first. A GIF of the test is shown below.  
+![Gripper](https://github.com/lc-st1/ECSE275/assets/53535721/7ff98c32-a196-45bb-9d9f-ec99f35539a6)
+
 #### Alternatives Considered
 ##### Grabbing Boxes Using A Parent
 Before we could figure out a more sensible method of grabbing the box with our inverse kinematics method, we set the parent of the box to the arm to grab it and the parent to the conveyor to release it.
@@ -60,8 +66,10 @@ Before we could figure out a more sensible method of grabbing the box with our i
 
   
 ## Results
-
-[Insert image/gifs of working conveyor belt]
+A run of the manufacturing line as a GIF:  
+![OGRunGIF](https://github.com/lc-st1/ECSE275/assets/53535721/1b078f7c-e99e-45b3-b1ec-bff14c13a1d4)  
+The full length YouTube video:  
+[![](https://markdown-videos-api.jorgenkh.no/youtube/3nSXLGADSrU)](https://youtu.be/3nSXLGADSrU)
 
 [quantitative data analysis on speed]
   
