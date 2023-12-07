@@ -4,7 +4,7 @@
 * Endar Li - Team Lead, Robot Scene Creation, General README Writer, Proximity Sensors
 * Jia Yang Lin - Gripper, End Point Path Planning
 * Josh Cook - Inverse Kinematics, End Point Path Planning
-* Luca Ciampaglia - Proximity Sensors, README Writer
+* Luca Ciampaglia - Conveyor Belts, Proximity Sensors, README Writer
 
 ## Description
 Use robot arms to move a box down conveyor belts to a goal point.
@@ -27,10 +27,11 @@ To move the joints of the robot arms, we implemented inverse kinematics. (PLEASE
 ...
 
 ## Cube Retrieval Method (Gripper)
-...
+An RG2 gripper was used to interact with and pick up the cubes. This gripper design was chosen as it interfaced with the robot arm easily and came with standard fingers for gripping. These are controlled via a force input, velocity input, and a boolean control input. For this project, the force and velocity inputs were left as the default values. We then control the gripper via the boolean input, toggling the gripper to be either open or closed.
 
 ### Alternatives Considered
 #### Suction
+Initially, other methods of interaction were considered. The first was using a suction-based manipulator to pick up the cubes. However, we were unable to control the gripper fully and chose not to use it.
 https://github.com/lc-st1/ECSE275/assets/75393058/4b42e3b2-67f5-425b-818a-d7759173aaff
 
 
