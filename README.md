@@ -33,23 +33,21 @@ An RG2 gripper was used to interact with and pick up the cubes. This gripper des
 ##### Suction
 https://github.com/lc-st1/ECSE275/assets/75393058/4b42e3b2-67f5-425b-818a-d7759173aaff
 
-Initially, other methods of interaction were considered. The first was using a suction-based manipulator to pick up the cubes. However, we were unable to control the gripper fully and chose not to use it. In addition to this, we decided that the mechanical gripper was more interesting challenge to use.
- 
-
+Initially, other methods of interaction were considered. The first was using a suction-based manipulator to pick up the cubes. However, we were unable to control the gripper fully and chose not to use it. In addition to this, we decided that the mechanical gripper was a more interesting challenge to implement.
 
 ### Path Planning Method (Follow Various Endpoints)
 We looked into samples from CoppeliaSim with the same gripper to understand how to implement the path planning method, but due to the samples using IK environments and threading, we were unable to replicate their method. Instead, to actuate the grippers, we performed the following to grab and release the box(es):
 1. Move towards the box.
 2. Use sim.checkCollision() to check that the grippers collide with the box.
 3. Modify the box parents to grab the box.
-4. Move towards an endpoint.
+4. Move towards a designated endpoint.
 5. Check that the distance between the box and the goal point is less than a threshold to release the box.
 
 ## Results
 it dont work yet
 
 ## Conclusion
-...
+The manufacturing line transports a box down two different conveyor belts to an endpoint using two IRB140 arms that move using inverse kinematics and by following different endpoints. This project can be further developed by implementing a more scalable and versatile path-planning method. Such a method can be used to make it easier for the project to be used for other applications and increase in complexity. One example of increasing the complexity is adding more conveyor belts, more robot arms, and/or more boxes. An example of using this for another application could be using the robot arms to put objects in empty boxes before moving the boxes.
 
 ## Instructions to Use
 1. Clone the repository: <br>
