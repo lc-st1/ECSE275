@@ -24,7 +24,7 @@ A general setup of the project consists of two perpendicular conveyor belts, two
 To move the joints of the robot arms, we implemented inverse kinematics. (PLEASE CHECK IF CORRECT, JOSH) We calculated the first 3 joints using the same method used in Assignment 4 of the homework. We used the elbow-down implementation for our arms as that is the most 
 
 ## Detection Method (Proximity Sensor)
-...
+To control the movement of the conveyor belts, we chose to use ray type proximity sensors. These were set up to detect when a cube passed by on the conveyor belt. Upon triggering, these would set the target speed of the conveyor belt to 0 and initiate the robot arm movement. These had to be placed slightly before the end of each conveyor belt to allow for the declaration time. We also used a proximity sensor to trigger the movement of the second conveyor belt, setting the target speed to 0.5 once a cube is detected in front of it. These were chosen for their ease of use, as the sensing function in the main script could call each of the proximity sensors and control the system based on their output.
 
 ## Cube Retrieval Method (Gripper)
 An RG2 gripper was used to interact with and pick up the cubes. This gripper design was chosen as it interfaced with the robot arm easily and came with standard fingers for gripping. These are controlled via a force input, velocity input, and a boolean control input. For this project, the force and velocity inputs were left as the default values. We then control the gripper via the boolean input, toggling the gripper to be either open or closed.
